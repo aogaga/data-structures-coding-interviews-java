@@ -142,13 +142,13 @@ public class MyArray {
         int[] result = new int[arr.length];
         int resultCounter = 0;
         for (int i = 0; i < arr.length; i++) {
-            if(arr[i] < 0){
+            if (arr[i] < 0) {
                 result[resultCounter++] = arr[i];
             }
         }
 
         for (int i = 0; i < arr.length; i++) {
-            if(arr[i] >= 0){
+            if (arr[i] >= 0) {
                 result[resultCounter++] = arr[i];
             }
         }
@@ -156,20 +156,29 @@ public class MyArray {
         return result;
     }
 
-    int[] maxMin(int[] arr){
-        int mid = arr.length/2;
+    int[] maxMin(int[] arr) {
+        int mid = arr.length / 2;
         int[] result = new int[arr.length];
-        int arlen = arr.length -1;
+        int arlen = arr.length - 1;
         int counter = 0;
-        for(int i = 0; i < mid; i++){
+        for (int i = 0; i < mid; i++) {
             result[counter++] = arr[arlen - i];
             result[counter++] = arr[i];
-
-
         }
-        if(arr.length %2 != 0){
+        if (arr.length % 2 != 0) {
             result[counter++] = arr[mid];
         }
         return result;
+    }
+
+    int findMaxSumSubArray(int[] arr) {
+        int max = Integer.MIN_VALUE;
+        int sum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            sum = sum + arr[i];
+
+            max = Math.max(sum, max);
+        }
+        return max;
     }
 }

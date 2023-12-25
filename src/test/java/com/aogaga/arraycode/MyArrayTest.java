@@ -103,11 +103,19 @@ class MyArrayTest {
     }
 
     @Test
-    void maxMin(){
-    int[] arr = {1, 2, 3, 4, 5};
-    int[] actual = {5, 1, 4, 2, 3};
+    void maxMin() {
+        int[] arr = {1, 2, 3, 4, 5};
+        int[] actual = {5, 1, 4, 2, 3};
 
-    int[] expected = myArray.maxMin(arr);
-    assertArrayEquals(actual, expected);
+        int[] expected = myArray.maxMin(arr);
+        assertArrayEquals(actual, expected);
+    }
+
+    @Test
+    void findMaxSumSubArray() {
+        int[] arr = {1, 7, -2, -5, 10, -1};
+
+        int actual = myArray.findMaxSumSubArray(arr);
+        assertEquals(actual, 11);
     }
 }
